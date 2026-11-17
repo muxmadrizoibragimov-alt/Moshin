@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVTO PRESTIJ ‚Äî Ishonchli Avtomobillar va Premium Aksessuarlar</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        pearl: '#F8FAFC',
+                        crimson: '#E11D48',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Clean White & Pearl Base with True Light Glassmorphism */
+        body {
+            background-color: #F8FAFC;
+            color: #0F172A;
+        }
+
+        /* Primary Frosted Glass Card */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.85);
+            box-shadow: 0 10px 35px -5px rgba(15, 23, 42, 0.06), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+        }
+
+        /* Higher Opacity Glass for Header, Modals & Drawers */
+        .glass-strong {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
+            border: 1px solid rgba(255, 255, 255, 0.95);
+            box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.1);
+        }
+
+        /* Subtle Inner Glass Input / Pill */
+        .glass-input {
+            background: rgba(255, 255, 255, 0.72);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(203, 213, 225, 0.7);
+            transition: all 0.2s ease;
+        }
+        .glass-input:focus {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: #E11D48;
+            box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.12);
+        }
+
+        /* Custom Range Slider Styling for Light Mode */
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: transparent;
+            cursor: pointer;
+        }
+        input[type="range"]::-webkit-slider-runnable-track {
+            background: rgba(203, 213, 225, 0.85);
+            height: 8px;
+            border-radius: 999px;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            margin-top: -6px;
+            background-color: #E11D48;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            border: 3px solid #FFFFFF;
+            box-shadow: 0 3px 10px rgba(225, 29, 72, 0.45);
+        }
+
+        /* Subtle Floating Animation for Background Blobs */
+        @keyframes floatSlow {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(20px, -25px) scale(1.05); }
+        }
+        .blob-animate {
+            animation: floatSlow 14s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-rose-600 selection:text-white overflow-x-hidden relative">
+
+    <!-- ==================== AMBIENT MESH GRADIENT BLOBS (Behind Glass) ==================== -->
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none bg-gradient-to-br from-white via-slate-50 to-sky-50/60">
+        <!-- Soft Sky Blue Blob -->
+        <div class="blob-animate absolute -top-24 -left-24 w-[480px] h-[480px] rounded-full bg-sky-300/35 blur-[110px]"></div>
+        <!-- Gentle Crimson / Coral Blob -->
+        <div class="blob-animate absolute top-[28%] -right-24 w-[460px] h-[460px] rounded-full bg-rose-300/30 blur-[120px]" style="animation-delay: -4s;"></div>
+        <!-- Warm Amber / Gold Blob -->
+        <div class="blob-animate absolute top-[62%] left-[10%] w-[440px] h-[440px] rounded-full bg-amber-200/40 blur-[115px]" style="animation-delay: -8s;"></div>
+        <!-- Bottom Soft Indigo/Sky Accent -->
+        <div class="absolute -bottom-24 right-[15%] w-[420px] h-[420px] rounded-full bg-blue-200/35 blur-[110px]"></div>
+    </div>
+
+    <!-- ==================== 1. FROSTED GLASS STICKY NAVBAR ==================== -->
+    <header class="fixed top-0 left-0 right-0 z-40 glass-strong border-b border-white/80 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-rose-600 to-amber-500 flex items-center justify-center shadow-lg shadow-rose-600/20 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-car-side text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-heading font-extrabold text-xl tracking-tight text-slate-900 block leading-none">
+                            AVTO <span class="text-rose-600">PRESTIJ</span>
+                        </span>
+                        <span class="text-[11px] text-slate-500 font-semibold tracking-wider uppercase">Avtosalon & Aksessuarlar</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-600">
+                    <a href="#home" class="hover:text-rose-600 transition-colors">Bosh sahifa</a>
+                    <a href="#cars" class="hover:text-rose-600 transition-colors">Avtomobillar</a>
+                    <a href="#accessories" class="hover:text-rose-600 transition-colors">Aksessuarlar</a>
+                    <a href="#calculator" class="hover:text-rose-600 transition-colors">Kredit Kalkulyatori</a>
+                    <a href="#tradein" class="hover:text-rose-600 transition-colors">Mashina Sotish</a>
+                </nav>
+
+                <!-- Right Actions: Quick Call + Cart + Mobile Menu -->
+                <div class="flex items-center gap-3">
+                    <a href="tel:+998901234567" class="hidden sm:flex items-center gap-2 px-4 py-2.5 rounded-2xl glass-input hover:bg-white text-xs font-bold text-slate-800 transition shadow-sm">
+                        <i class="fa-solid fa-phone text-rose-600"></i>
+                        <span>+998 90 123-45-67</span>
+                    </a>
+
+                    <!-- Cart Drawer Trigger -->
+                    <button onclick="toggleCart(true)" class="relative px-4 py-2.5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white transition flex items-center gap-2 shadow-md group" aria-label="Savatcha">
+                        <i class="fa-solid fa-bag-shopping text-amber-400 text-base group-hover:scale-110 transition-transform"></i>
+                        <span class="hidden md:inline text-sm font-semibold">Savatcha</span>
+                        <span id="cart-badge" class="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-rose-600 text-white text-xs font-extrabold flex items-center justify-center shadow-md ring-2 ring-white">0</span>
+                    </button>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button onclick="toggleMobileMenu()" class="lg:hidden p-3 rounded-2xl glass-input text-slate-800 hover:bg-white" aria-label="Menyu">
+                        <i id="mobile-menu-icon" class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-xl border-b border-slate-200/80 px-4 pt-2 pb-5 space-y-1.5">
+            <a href="#home" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl hover:bg-rose-50 text-slate-800 font-semibold">Bosh sahifa</a>
+            <a href="#cars" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl hover:bg-rose-50 text-slate-800 font-semibold">Sotuvdagi Avtomobillar</a>
+            <a href="#accessories" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl hover:bg-rose-50 text-slate-800 font-semibold">Avto-Aksessuarlar Do'koni</a>
+            <a href="#calculator" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl hover:bg-rose-50 text-slate-800 font-semibold">Kredit Kalkulyatori</a>
+            <a href="#tradein" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl hover:bg-rose-50 text-slate-800 font-semibold">Mashina Sotish / Trade-in</a>
+        </div>
+    </header>
+
+    <!-- ==================== 2. HERO SECTION ==================== -->
+    <section id="home" class="relative pt-28 pb-16 lg:pt-36 lg:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Glassmorphic Hero Container -->
+            <div class="glass-panel rounded-[2rem] p-6 sm:p-10 lg:p-12 relative overflow-hidden">
+                <div class="grid lg:grid-cols-12 gap-10 items-center">
+                    <!-- Left Copy -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-500/10 border border-rose-500/25 text-rose-600 text-xs sm:text-sm font-bold">
+                            <span class="w-2 h-2 rounded-full bg-rose-600 animate-ping"></span>
+                            <span>O'zbekiston bo'ylab ishonchli avto-savdo markazi</span>
+                        </div>
+
+                        <h1 class="font-heading font-extrabold text-3xl sm:text-5xl lg:text-[52px] leading-[1.15] text-slate-900">
+                            Ishonchli avtomobillar va <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-600 via-rose-500 to-amber-500">premium aksessuarlar</span> ‚Äî barchasi bir joyda
+                        </h1>
+
+                        <p class="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            Kraska holati to‚Äòliq tekshirilgan eng sara avtomobillar, qulay nasiya va avtokredit imkoniyatlari hamda mashinangiz uchun original tuning va aksessuarlar do‚Äòkoni.
+                        </p>
+
+                        <!-- CTA Buttons -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-1">
+                            <a href="#cars" class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-700 hover:to-rose-600 text-white font-bold text-base shadow-xl shadow-rose-600/25 flex items-center justify-center gap-3 transition transform hover:-translate-y-0.5">
+                                <i class="fa-solid fa-car"></i>
+                                <span>Mashinalarni ko'rish</span>
+                            </a>
+                            <a href="#accessories" class="w-full sm:w-auto px-7 py-4 rounded-2xl bg-white/85 hover:bg-white border border-slate-200 text-slate-900 font-bold text-base shadow-sm flex items-center justify-center gap-3 transition transform hover:-translate-y-0.5">
+                                <i class="fa-solid fa-gem text-amber-500"></i>
+                                <span>Aksessuarlar do'koni</span>
+                            </a>
+                        </div>
+
+                        <!-- Trust Stats Badges -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4">
+                            <div class="p-3.5 rounded-2xl bg-white/75 border border-white flex items-center gap-3 shadow-sm">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-600 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-shield-check text-lg"></i>
+                                </div>
+                                <div class="text-left">
+                                    <div class="font-heading font-extrabold text-sm text-slate-900">100% Tekshirilgan</div>
+                                    <div class="text-xs text-slate-500">Toza tarix va diagnostika</div>
+                                </div>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-white/75 border border-white flex items-center gap-3 shadow-sm">
+                                <div class="w-10 h-10 rounded-xl bg-sky-500/15 text-sky-600 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-bolt text-lg"></i>
+                                </div>
+                                <div class="text-left">
+                                    <div class="font-heading font-extrabold text-sm text-slate-900">Tezkor Rasmiylashtirish</div>
+                                    <div class="text-xs text-slate-500">1 soat ichida kalit qo'lda</div>
+                                </div>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-white/75 border border-white flex items-center gap-3 shadow-sm">
+                                <div class="w-10 h-10 rounded-xl bg-amber-500/15 text-amber-600 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-percent text-lg"></i>
+                                </div>
+                                <div class="text-left">
+                                    <div class="font-heading font-extrabold text-sm text-slate-900">Nasiya / Kredit</div>
+                                    <div class="text-xs text-slate-500">10% dan boshlang'ich to'lov</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Automotive Showcase Visual -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="relative rounded-3xl overflow-hidden border-2 border-white shadow-2xl shadow-slate-900/10 group">
+                            <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1000&q=80" 
+                                 onerror="this.src='https://placehold.co/800x600/F1F5F9/0F172A?text=AVTO+PRESTIJ'"
+                                 alt="Premium Avtomobil" 
+                                 class="w-full h-[360px] sm:h-[430px] object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+                            
+                            <!-- Frosted Glass Floating Card on Image -->
+                            <div class="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-white/85 backdrop-blur-xl border border-white shadow-lg flex items-center justify-between gap-3">
+                                <div>
+                                    <span class="text-[11px] font-extrabold text-rose-600 uppercase tracking-wider">Maxsus Taklif</span>
+                                    <h3 class="font-heading font-bold text-slate-900 text-base sm:text-lg">Avtokredit & Trade-in</h3>
+                                    <p class="text-xs text-slate-600">Eski mashinangizni yangisiga oson almashtiring</p>
+                                </div>
+                                <a href="#calculator" class="w-11 h-11 rounded-xl bg-rose-600 hover:bg-rose-700 flex items-center justify-center text-white shrink-0 transition shadow-md">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 3. SMART CAR CATALOG & FILTERS ==================== -->
+    <section id="cars" class="py-16 lg:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                <div>
+                    <span class="text-rose-600 font-extrabold text-xs sm:text-sm uppercase tracking-wider">Avto Katalog</span>
+                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 mt-1">Sotuvdagi Avtomobillar</h2>
+                </div>
+                <p class="text-slate-600 text-sm max-w-md">
+                    Barcha avtomobillar texnik ko'rikdan o'tgan. Naqd pulga, nasiyaga yoki Trade-in orqali xarid qilishingiz mumkin.
+                </p>
+            </div>
+
+            <!-- Frosted Glass Filter Bar -->
+            <div class="glass-panel p-4 sm:p-5 rounded-3xl mb-8 space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-3.5 items-center">
+                    <!-- Search by Model Name -->
+                    <div class="md:col-span-4 relative">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                        <input type="text" id="car-search" oninput="renderCars()" placeholder="Model bo'yicha qidirish (masalan: Malibu)..." class="w-full pl-10 pr-4 py-2.5 rounded-2xl glass-input text-sm text-slate-900 placeholder-slate-400 focus:outline-none">
+                    </div>
+
+                    <!-- Paint Condition Filter -->
+                    <div class="md:col-span-4">
+                        <select id="condition-filter" onchange="renderCars()" class="w-full px-4 py-2.5 rounded-2xl glass-input text-sm font-medium text-slate-800 focus:outline-none">
+                            <option value="Barchasi">Kraska holati: Barchasi</option>
+                            <option value="Kraska toza">Kraska toza (100%)</option>
+                            <option value="Petno bor">Petno bor</option>
+                        </select>
+                    </div>
+
+                    <!-- Price Sort -->
+                    <div class="md:col-span-4">
+                        <select id="price-sort" onchange="renderCars()" class="w-full px-4 py-2.5 rounded-2xl glass-input text-sm font-medium text-slate-800 focus:outline-none">
+                            <option value="default">Saralash: Tavsiya etilgan</option>
+                            <option value="asc">Narxi: Arzonidan qimmatiga</option>
+                            <option value="desc">Narxi: Qimmatidan arzoniga</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Brand Filter Pills -->
+                <div class="flex flex-wrap items-center gap-2 pt-1 border-t border-slate-200/70" id="brand-filters">
+                    <span class="text-xs font-bold text-slate-500 mr-1">Marka:</span>
+                    <button onclick="setBrandFilter('Barchasi')" data-brand="Barchasi" class="brand-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-rose-600 text-white shadow-sm transition">Barchasi</button>
+                    <button onclick="setBrandFilter('Chevrolet')" data-brand="Chevrolet" class="brand-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white/80 hover:bg-white text-slate-700 border border-slate-200/80 transition">Chevrolet</button>
+                    <button onclick="setBrandFilter('BYD')" data-brand="BYD" class="brand-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white/80 hover:bg-white text-slate-700 border border-slate-200/80 transition">BYD</button>
+                    <button onclick="setBrandFilter('Kia')" data-brand="Kia" class="brand-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white/80 hover:bg-white text-slate-700 border border-slate-200/80 transition">Kia</button>
+                    <button onclick="setBrandFilter('Hyundai')" data-brand="Hyundai" class="brand-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white/80 hover:bg-white text-slate-700 border border-slate-200/80 transition">Hyundai</button>
+                </div>
+            </div>
+
+            <!-- Cars Grid -->
+            <div id="cars-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 4. AUTO ACCESSORIES STORE ==================== -->
+    <section id="accessories" class="py-16 lg:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                <div>
+                    <span class="text-amber-600 font-extrabold text-xs sm:text-sm uppercase tracking-wider">Tuning & Jihozlar</span>
+                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 mt-1">Avto-Aksessuarlar Do'koni</h2>
+                </div>
+                
+                <!-- Category Tabs -->
+                <div class="flex flex-wrap gap-2" id="acc-tabs">
+                    <button onclick="setAccCategory('Barchasi')" data-cat="Barchasi" class="acc-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-slate-900 text-white shadow-sm transition">Barchasi</button>
+                    <button onclick="setAccCategory('Salon va Chexollar')" data-cat="Salon va Chexollar" class="acc-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold glass-panel text-slate-700 hover:bg-white transition">Salon va Chexollar</button>
+                    <button onclick="setAccCategory('Elektronika')" data-cat="Elektronika" class="acc-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold glass-panel text-slate-700 hover:bg-white transition">Elektronika</button>
+                    <button onclick="setAccCategory('Diska va Tonirovka')" data-cat="Diska va Tonirovka" class="acc-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold glass-panel text-slate-700 hover:bg-white transition">Diska va Tonirovka</button>
+                </div>
+            </div>
+
+            <!-- Accessories Grid -->
+            <div id="accessories-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 5. INTERACTIVE NASIYA / KREDIT CALCULATOR ==================== -->
+    <section id="calculator" class="py-16 lg:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-panel rounded-[2rem] p-6 sm:p-10 lg:p-12">
+                <div class="grid lg:grid-cols-12 gap-10 items-center">
+                    <!-- Controls -->
+                    <div class="lg:col-span-7 space-y-7">
+                        <div>
+                            <span class="px-3.5 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-600 text-xs font-extrabold uppercase">Onlayn Hisob-kitob</span>
+                            <h2 class="font-heading font-extrabold text-2xl sm:text-4xl text-slate-900 mt-3">Nasiya va Kredit Kalkulyatori</h2>
+                            <p class="text-slate-600 text-sm mt-2">Avtomobil narxi, boshlang'ich to'lov va muddatni tanlang ‚Äî oylik to'lov miqdorini darhol hisoblang.</p>
+                        </div>
+
+                        <!-- Car Price Slider -->
+                        <div class="space-y-2.5">
+                            <div class="flex justify-between items-center text-sm font-semibold">
+                                <span class="text-slate-700">Avtomobil narxi:</span>
+                                <div class="text-right">
+                                    <span id="calc-price-usd" class="text-slate-900 font-heading font-extrabold text-lg">$20,000</span>
+                                    <span id="calc-price-uzs" class="text-xs text-slate-500 block">256 000 000 so'm</span>
+                                </div>
+                            </div>
+                            <input type="range" id="calc-price" min="8000" max="60000" step="500" value="20000" oninput="calculateLoan()" class="w-full">
+                            <div class="flex justify-between text-xs font-medium text-slate-400">
+                                <span>$8,000</span>
+                                <span>$60,000</span>
+                            </div>
+                        </div>
+
+                        <!-- Down Payment Slider (10% - 70%) -->
+                        <div class="space-y-2.5">
+                            <div class="flex justify-between items-center text-sm font-semibold">
+                                <span class="text-slate-700">Boshlang'ich to'lov (<span id="calc-down-percent" class="text-rose-600 font-bold">25</span>%):</span>
+                                <div class="text-right">
+                                    <span id="calc-down-usd" class="text-rose-600 font-heading font-extrabold text-lg">$5,000</span>
+                                    <span id="calc-down-uzs" class="text-xs text-slate-500 block">64 000 000 so'm</span>
+                                </div>
+                            </div>
+                            <input type="range" id="calc-down" min="10" max="70" step="5" value="25" oninput="calculateLoan()" class="w-full">
+                            <div class="flex justify-between text-xs font-medium text-slate-400">
+                                <span>10%</span>
+                                <span>70%</span>
+                            </div>
+                        </div>
+
+                        <!-- Duration Buttons (12, 24, 36, 48, 60 months) -->
+                        <div class="space-y-2.5">
+                            <span class="text-sm font-semibold text-slate-700 block">To'lov muddati (oy):</span>
+                            <div class="grid grid-cols-5 gap-2 sm:gap-3" id="duration-buttons">
+                                <button type="button" onclick="setLoanMonths(12)" data-months="12" class="month-btn py-3 rounded-2xl bg-white/80 border border-slate-200 font-bold text-xs sm:text-sm text-slate-700 hover:bg-white transition">12 oy</button>
+                                <button type="button" onclick="setLoanMonths(24)" data-months="24" class="month-btn py-3 rounded-2xl bg-white/80 border border-slate-200 font-bold text-xs sm:text-sm text-slate-700 hover:bg-white transition">24 oy</button>
+                                <button type="button" onclick="setLoanMonths(36)" data-months="36" class="month-btn active py-3 rounded-2xl bg-rose-600 border border-rose-600 font-bold text-xs sm:text-sm text-white shadow-md shadow-rose-600/20 transition">36 oy</button>
+                                <button type="button" onclick="setLoanMonths(48)" data-months="48" class="month-btn py-3 rounded-2xl bg-white/80 border border-slate-200 font-bold text-xs sm:text-sm text-slate-700 hover:bg-white transition">48 oy</button>
+                                <button type="button" onclick="setLoanMonths(60)" data-months="60" class="month-btn py-3 rounded-2xl bg-white/80 border border-slate-200 font-bold text-xs sm:text-sm text-slate-700 hover:bg-white transition">60 oy</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Result Card (Elevated White Glass) -->
+                    <div class="lg:col-span-5 bg-white/85 backdrop-blur-xl border border-white rounded-3xl p-6 sm:p-8 shadow-xl space-y-6">
+                        <div class="border-b border-slate-200/80 pb-5">
+                            <span class="text-slate-500 text-xs font-bold uppercase tracking-wider">Taxminiy oylik to'lov:</span>
+                            <div class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 mt-1.5">
+                                $<span id="calc-monthly-usd">573</span><span class="text-sm font-semibold text-slate-500"> / oyiga</span>
+                            </div>
+                            <div class="text-sm font-bold text-rose-600 mt-1">
+                                ‚âà <span id="calc-monthly-uzs">7 334 000</span> so'm / oyiga
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-slate-500">Boshlang'ich to'lov:</span>
+                                <span id="summary-down" class="font-bold text-slate-900">$5,000</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-500">Kredit summasi:</span>
+                                <span id="summary-loan" class="font-bold text-slate-900">$15,000</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-500">Kerakli hujjatlar:</span>
+                                <span class="font-bold text-emerald-600">Faqat Pasport</span>
+                            </div>
+                        </div>
+
+                        <a href="#cars" class="w-full py-4 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm uppercase tracking-wide flex items-center justify-center gap-2 transition shadow-lg">
+                            <span>Mos mashinani tanlash</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 6. TRADE-IN / MASHINANGIZNI SOTING ==================== -->
+    <section id="tradein" class="py-16 lg:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-10 items-center">
+                <!-- Left Info -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-rose-600 font-extrabold text-xs sm:text-sm uppercase tracking-wider">Tezkor Baholash & Trade-in</span>
+                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 leading-tight">
+                        Mashinangizni Soting yoki Yangisiga Almashtiring
+                    </h2>
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        Bozorda xaridor kutib vaqt yo'qotmang! Mashinangiz ma'lumotlarini qoldiring ‚Äî mutaxassislarimiz 15 daqiqa ichida bozor narxida baholab, naqd pulga sotib olishadi yoki salondagi istalgan mashinaga almashtirib berishadi.
+                    </p>
+
+                    <div class="space-y-3.5 pt-1">
+                        <div class="glass-panel p-4 rounded-2xl flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-rose-500/15 text-rose-600 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-base">30 daqiqada naqd pul</h4>
+                                <p class="text-sm text-slate-600">Notarius va rasmiylashtirish xarajatlarini o'zimiz hal qilamiz.</p>
+                            </div>
+                        </div>
+                        <div class="glass-panel p-4 rounded-2xl flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-amber-500/15 text-amber-600 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-repeat"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-base">Qulay Trade-in dasturi</h4>
+                                <p class="text-sm text-slate-600">Eski mashinangizni yangi mashina uchun boshlang'ich to'lov sifatida qabul qilamiz.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Frosted Glass Form -->
+                <div class="lg:col-span-7">
+                    <form onsubmit="handleTradeInSubmit(event)" class="glass-panel p-6 sm:p-9 rounded-[2rem] space-y-5">
+                        <h3 class="font-heading font-bold text-xl text-slate-900">Mashinani onlayn baholash</h3>
+                        
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Mashina modeli *</label>
+                                <input type="text" id="ti-model" required placeholder="Masalan: Gentra L-Style" class="w-full px-4 py-3 rounded-2xl glass-input text-slate-900 text-sm focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Ishlab chiqarilgan yili *</label>
+                                <input type="number" id="ti-year" required min="1995" max="2026" placeholder="Masalan: 2022" class="w-full px-4 py-3 rounded-2xl glass-input text-slate-900 text-sm focus:outline-none">
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Yurgan masofasi (Probeg) *</label>
+                                <input type="text" id="ti-mileage" required placeholder="Masalan: 45 000 km" class="w-full px-4 py-3 rounded-2xl glass-input text-slate-900 text-sm focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Kraska holati *</label>
+                                <select id="ti-condition" class="w-full px-4 py-3 rounded-2xl glass-input text-slate-900 text-sm focus:outline-none">
+                                    <option value="Kraska toza">Kraska toza (100%)</option>
+                                    <option value="1-2 detal petno bor">1-2 detal petno bor</option>
+                                    <option value="Kraska sepilgan">Kraska sepilgan</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Telefon raqamingiz *</label>
+                            <input type="tel" id="ti-phone" required placeholder="+998 90 123-45-67" class="w-full px-4 py-3 rounded-2xl glass-input text-slate-900 text-sm focus:outline-none">
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-2xl bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-700 hover:to-rose-600 text-white font-bold text-base shadow-lg shadow-rose-600/25 transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Baholashga yuborish</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 7. FOOTER ==================== -->
+    <footer class="glass-strong border-t border-white pt-16 pb-10 mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-200/80">
+                <!-- Brand -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-600 to-amber-500 flex items-center justify-center shadow-md">
+                            <i class="fa-solid fa-car-side text-white text-lg"></i>
+                        </div>
+                        <span class="font-heading font-extrabold text-xl text-slate-900">AVTO <span class="text-rose-600">PRESTIJ</span></span>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Ishonchli yurgan va yangi avtomobillar savdosi, shuningdek, barcha turdagi premium avto-aksessuarlar do'koni.
+                    </p>
+                    <div class="flex items-center gap-3 pt-1">
+                        <a href="https://t.me" target="_blank" class="w-10 h-10 rounded-xl bg-white hover:bg-sky-500 text-slate-700 hover:text-white border border-slate-200 flex items-center justify-center transition shadow-sm">
+                            <i class="fa-brands fa-telegram text-lg"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="w-10 h-10 rounded-xl bg-white hover:bg-pink-600 text-slate-700 hover:text-white border border-slate-200 flex items-center justify-center transition shadow-sm">
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                        </a>
+                        <a href="tel:+998901234567" class="w-10 h-10 rounded-xl bg-white hover:bg-emerald-600 text-slate-700 hover:text-white border border-slate-200 flex items-center justify-center transition shadow-sm">
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="font-heading font-bold text-slate-900 mb-4">Bo'limlar</h4>
+                    <ul class="space-y-2.5 text-sm text-slate-600 font-medium">
+                        <li><a href="#cars" class="hover:text-rose-600 transition">Sotuvdagi avtomobillar</a></li>
+                        <li><a href="#accessories" class="hover:text-rose-600 transition">Avto-aksessuarlar do'koni</a></li>
+                        <li><a href="#calculator" class="hover:text-rose-600 transition">Kredit kalkulyatori</a></li>
+                        <li><a href="#tradein" class="hover:text-rose-600 transition">Mashina sotish (Trade-in)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Locations -->
+                <div>
+                    <h4 class="font-heading font-bold text-slate-900 mb-4">Manzillarimiz</h4>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-location-dot text-rose-600 mt-1"></i>
+                            <span>Toshkent sh., Sergeli mashina bozori, 4-pavilon</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-location-dot text-amber-500 mt-1"></i>
+                            <span>Samarqand sh., Ulug'bek ko'chasi, Avtosalon</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contacts -->
+                <div>
+                    <h4 class="font-heading font-bold text-slate-900 mb-4">Aloqa & Ish vaqti</h4>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-phone text-emerald-600"></i>
+                            <a href="tel:+998901234567" class="text-slate-900 font-bold hover:text-rose-600">+998 (90) 123-45-67</a>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-brands fa-telegram text-sky-500"></i>
+                            <span>@avtoprestij_uz</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-clock text-amber-500"></i>
+                            <span>Har kuni: 09:00 ‚Äî 20:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>&copy; 2026 AVTO PRESTIJ. Barcha huquqlar himoyalangan.</p>
+                <p>Zamonaviy avto-savdo platformasi</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== FLOATING QUICK CONTACT BUTTONS ==================== -->
+    <div class="fixed bottom-6 left-6 z-40 flex items-center gap-2.5">
+        <a href="https://t.me" target="_blank" class="glass-strong px-4 py-3 rounded-2xl flex items-center gap-2.5 text-slate-900 hover:bg-white transition shadow-lg group" title="Telegram orqali yozish">
+            <span class="w-8 h-8 rounded-xl bg-sky-500 text-white flex items-center justify-center group-hover:scale-110 transition-transform">
+                <i class="fa-brands fa-telegram text-base"></i>
+            </span>
+            <span class="text-xs font-bold hidden sm:inline">Telegram</span>
+        </a>
+        <a href="tel:+998901234567" class="glass-strong px-4 py-3 rounded-2xl flex items-center gap-2.5 text-slate-900 hover:bg-white transition shadow-lg group" title="Qo'ng'iroq qilish">
+            <span class="w-8 h-8 rounded-xl bg-emerald-500 text-white flex items-center justify-center group-hover:scale-110 transition-transform">
+                <i class="fa-solid fa-phone text-sm"></i>
+            </span>
+            <span class="text-xs font-bold hidden sm:inline">Qo'ng'iroq</span>
+        </a>
+    </div>
+
+    <!-- ==================== FROSTED GLASS CAR DETAILS & BOOKING MODAL ==================== -->
+    <div id="car-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/40 backdrop-blur-md">
+        <div class="relative w-full max-w-2xl rounded-[2rem] glass-strong overflow-hidden max-h-[90vh] overflow-y-auto">
+            <button onclick="closeCarModal()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/90 hover:bg-rose-600 text-slate-800 hover:text-white shadow-md flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div id="car-modal-content">
+                <!-- Populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SLIDE-OVER FROSTED GLASS SHOPPING CART DRAWER ==================== -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
+        <!-- Backdrop -->
+        <div onclick="toggleCart(false)" class="absolute inset-0 bg-slate-900/35 backdrop-blur-sm"></div>
+        
+        <!-- Drawer Panel -->
+        <div class="absolute top-0 right-0 bottom-0 w-full max-w-md glass-strong border-l border-white flex flex-col">
+            <!-- Drawer Header -->
+            <div class="p-6 border-b border-slate-200/80 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/15 text-amber-600 flex items-center justify-center">
+                        <i class="fa-solid fa-bag-shopping text-lg"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-slate-900">Aksessuarlar Savatchasi</h3>
+                </div>
+                <button onclick="toggleCart(false)" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Cart Items List -->
+            <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-3.5">
+                <!-- Populated via JS -->
+            </div>
+
+            <!-- Cart Footer / Checkout Form -->
+            <div id="cart-footer" class="p-6 bg-white/90 border-t border-slate-200/80 space-y-4">
+                <div class="flex items-center justify-between text-base">
+                    <span class="text-slate-600 font-medium">Jami summa:</span>
+                    <span id="cart-total-uzs" class="font-heading font-extrabold text-xl text-rose-600">0 so'm</span>
+                </div>
+
+                <form onsubmit="submitCartOrder(event)" class="space-y-3">
+                    <input type="text" id="order-name" required placeholder="Ismingiz" class="w-full px-4 py-3 rounded-xl glass-input text-slate-900 text-sm focus:outline-none">
+                    <input type="tel" id="order-phone" required placeholder="Telefon raqamingiz (+998...)" class="w-full px-4 py-3 rounded-xl glass-input text-slate-900 text-sm focus:outline-none">
+                    <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-700 hover:to-rose-600 text-white font-bold text-sm uppercase tracking-wide transition shadow-lg shadow-rose-600/20">
+                        Buyurtmani rasmiylashtirish
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== TOAST NOTIFICATION ==================== -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="flex items-center gap-3 px-5 py-4 rounded-2xl bg-slate-900 text-white shadow-2xl border border-white/15">
+            <i class="fa-solid fa-circle-check text-emerald-400 text-xl"></i>
+            <span id="toast-message" class="font-semibold text-sm">So'rovingiz menejerga yuborildi!</span>
+        </div>
+    </div>
+
+    <!-- ==================== JAVASCRIPT LOGIC ==================== -->
+    <script>
+        const USD_RATE = 12800; // 1 USD = 12,800 UZS
+
+        // 1. REALISTIC UZBEK CAR MARKET DATA
+        const carsData = [
+            {
+                id: 1,
+                brand: 'Chevrolet',
+                name: 'Chevrolet Malibu 2 Turbo Premier',
+                year: 2022,
+                mileage: '34 000 km',
+                condition: 'Kraska toza',
+                creditAvailable: true,
+                fuel: 'Benzin (2.0 Turbo)',
+                transmission: 'Avtomat (9-pog‚Äòonali)',
+                color: 'Qora (GBA)',
+                priceUSD: 26500,
+                image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=80',
+                description: 'Ideal holatda, bir qo‚Äòl minilgan. Panorama lyuk, old va orqa o‚Äòrindiqlar isitgichi, Bose audio tizimi, 360 kamera mavjud.'
+            },
+            {
+                id: 2,
+                brand: 'BYD',
+                name: 'BYD Song Plus Champion DMI',
+                year: 2024,
+                mileage: '8 500 km',
+                condition: 'Kraska toza',
+                creditAvailable: true,
+                fuel: 'Gibrid (110 km elektr)',
+                transmission: 'Avtomat (E-CVT)',
+                color: 'Kulrang (Time Grey)',
+                priceUSD: 28900,
+                image: 'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=900&q=80',
+                description: 'Eng oxirgi Champion versiyasi. Rusifikatsiya qilingan, original zaryadnik va 7D poliklari bilan birga beriladi.'
+            },
+            {
+                id: 3,
+                brand: 'Chevrolet',
+                name: 'Chevrolet Gentra L-Style Plus',
+                year: 2023,
+                mileage: '22 000 km',
+                condition: 'Kraska toza',
+                creditAvailable: true,
+                fuel: 'Benzin / Metan 4-pokoleniya',
+                transmission: 'Avtomat',
+                color: 'Oq (Summit White)',
+                priceUSD: 14800,
+                image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=900&q=80',
+                description: 'ABS, lyuk, magnitofon, quyma diskalar. Yumshoq balonlar taqilgan, hech qanday xarajati yo‚Äòq.'
+            },
+            {
+                id: 4,
+                brand: 'Kia',
+                name: 'Kia K5 GT-Line',
+                year: 2021,
+                mileage: '58 000 km',
+                condition: 'Petno bor',
+                conditionNote: '1 detal petno (o‚Äòng krilo)',
+                creditAvailable: true,
+                fuel: 'Benzin (2.5 GDI)',
+                transmission: 'Avtomat',
+                color: 'Oq marvarid',
+                priceUSD: 24200,
+                image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=900&q=80',
+                description: 'O‚Äòng old qanotda yengil kosmetik petno bor, ichiga o‚Äòtmagan. Proektsiya, slepoy zona, panorama tom.'
+            },
+            {
+                id: 5,
+                brand: 'Chevrolet',
+                name: 'Chevrolet Tracker 2 Premier',
+                year: 2023,
+                mileage: '19 000 km',
+                condition: 'Kraska toza',
+                creditAvailable: true,
+                fuel: 'Benzin (1.2 Turbo)',
+                transmission: 'Avtomat',
+                color: 'Qora',
+                priceUSD: 19400,
+                image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=900&q=80',
+                description: 'Avtoparkovka, klimat-kontrol, kruiz-kontrol, LED faralar. Saloniga qimmat chexol va polik taqilgan.'
+            },
+            {
+                id: 6,
+                brand: 'Hyundai',
+                name: 'Hyundai Sonata Prestige',
+                year: 2022,
+                mileage: '41 000 km',
+                condition: 'Petno bor',
+                conditionNote: 'Orqa eshikda petno',
+                creditAvailable: true,
+                fuel: 'Benzin (2.5)',
+                transmission: 'Avtomat',
+                color: 'Kumushrang',
+                priceUSD: 25400,
+                image: 'https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=900&q=80',
+                description: 'Keng va qulay biznes-klass sedan. Raqamli panel, o‚Äòrindiqlar ventilyatsiyasi va isitish tizimi mavjud.'
+            }
+        ];
+
+        // 2. AUTO ACCESSORIES DATA (Prices in UZS)
+        const accessoriesData = [
+            {
+                id: 101,
+                category: 'Salon va Chexollar',
+                name: '7D EKO-charm Poliklar',
+                fit: 'Gentra, Cobalt, Malibu, BYD uchun',
+                price: 650000,
+                image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80'
+            },
+            {
+                id: 102,
+                category: 'Salon va Chexollar',
+                name: 'Cardinar Chexollar To‚Äòplami',
+                fit: 'Alcantara va premium eko-charm',
+                price: 1550000,
+                image: 'https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&w=700&q=80'
+            },
+            {
+                id: 103,
+                category: 'Elektronika',
+                name: '4K Video-registrator (Wi-Fi + GPS)',
+                fit: 'Old va orqa kamera, tungi syomka',
+                price: 1150000,
+                image: 'https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&w=700&q=80'
+            },
+            {
+                id: 104,
+                category: 'Elektronika',
+                name: 'Teyes CC3 Android Monitor (4/64 GB)',
+                fit: 'Ramka va shtekerlari bilan tayyor',
+                price: 3200000,
+                image: 'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=700&q=80'
+            },
+            {
+                id: 105,
+                category: 'Diska va Tonirovka',
+                name: 'R18 Sport Diskalar (4 dona)',
+                fit: '5x114.3 / 5x105 razmerlar mavjud',
+                price: 6800000,
+                image: 'https://images.unsplash.com/photo-1578844251758-2f71da64c96f?auto=format&fit=crop&w=700&q=80'
+            },
+            {
+                id: 106,
+                category: 'Diska va Tonirovka',
+                name: 'Llumar Tonirovka Plyonka (Atermal)',
+                fit: 'Quyosh nuridan 99% himoya, original',
+                price: 950000,
+                image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=700&q=80'
+            }
+        ];
+
+        // STATE VARIABLES
+        let selectedBrand = 'Barchasi';
+        let selectedAccCategory = 'Barchasi';
+        let cart = [];
+        let loanMonths = 36;
+
+        // FORMAT CURRENCY HELPERS
+        const formatUSD = (num) => '$' + num.toLocaleString('en-US');
+        const formatUZS = (num) => Math.round(num).toLocaleString('ru-RU') + " so'm";
+
+        // ==================== RENDER CARS CATALOG ====================
+        function setBrandFilter(brand) {
+            selectedBrand = brand;
+            document.querySelectorAll('.brand-btn').forEach(btn => {
+                if (btn.dataset.brand === brand) {
+                    btn.className = 'brand-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-rose-600 text-white shadow-sm transition';
+                } else {
+                    btn.className = 'brand-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white/80 hover:bg-white text-slate-700 border border-slate-200/80 transition';
+                }
+            });
+            renderCars();
+        }
+
+        function renderCars() {
+            const searchQuery = document.getElementById('car-search').value.trim().toLowerCase();
+            const conditionVal = document.getElementById('condition-filter').value;
+            const sortVal = document.getElementById('price-sort').value;
+            const grid = document.getElementById('cars-grid');
+
+            let filtered = carsData.filter(car => {
+                const matchSearch = car.name.toLowerCase().includes(searchQuery) || car.brand.toLowerCase().includes(searchQuery);
+                const matchBrand = selectedBrand === 'Barchasi' || car.brand === selectedBrand;
+                const matchCondition = conditionVal === 'Barchasi' || car.condition === conditionVal;
+                return matchSearch && matchBrand && matchCondition;
+            });
+
+            if (sortVal === 'asc') {
+                filtered.sort((a, b) => a.priceUSD - b.priceUSD);
+            } else if (sortVal === 'desc') {
+                filtered.sort((a, b) => b.priceUSD - a.priceUSD);
+            }
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-12 glass-panel rounded-3xl">
+                        <i class="fa-solid fa-car-burst text-4xl text-slate-400 mb-3"></i>
+                        <p class="text-slate-600 font-medium">Tanlangan filtr bo'yicha avtomobillar topilmadi.</p>
+                    </div>`;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(car => {
+                const isClean = car.condition === 'Kraska toza';
+                const badgeClass = isClean 
+                    ? 'bg-emerald-50/90 text-emerald-700 border-emerald-200' 
+                    : 'bg-amber-50/90 text-amber-700 border-amber-200';
+                const badgeText = isClean ? 'Kraska toza' : (car.conditionNote || 'Petno bor');
+                const priceUZS = car.priceUSD * USD_RATE;
+
+                return `
+                <div class="group rounded-3xl glass-panel hover:bg-white/85 overflow-hidden transition-all duration-300 flex flex-col">
+                    <!-- Image -->
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="${car.image}" onerror="this.src='https://placehold.co/600x400/F1F5F9/0F172A?text=${encodeURIComponent(car.name)}'" alt="${car.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+                            <span class="px-3 py-1 rounded-full text-xs font-bold border backdrop-blur-md shadow-sm ${badgeClass}">
+                                <i class="fa-solid ${isClean ? 'fa-shield-check' : 'fa-circle-exclamation'} mr-1"></i> ${badgeText}
+                            </span>
+                            ${car.creditAvailable ? `<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-sky-50/90 text-sky-700 border border-sky-200 backdrop-blur-md shadow-sm">Kredit bor</span>` : ''}
+                        </div>
+                        <div class="absolute bottom-3 right-3 px-3 py-1 rounded-xl bg-white/90 backdrop-blur-md text-xs font-extrabold text-slate-900 shadow-sm">
+                            ${car.year} yil
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-heading font-bold text-lg text-slate-900 group-hover:text-rose-600 transition">${car.name}</h3>
+                            
+                            <!-- Specs Pills -->
+                            <div class="grid grid-cols-2 gap-2 mt-3 text-xs font-medium text-slate-600">
+                                <div class="flex items-center gap-2 bg-white/75 border border-slate-200/60 px-3 py-2 rounded-xl">
+                                    <i class="fa-solid fa-gauge-high text-rose-600"></i>
+                                    <span>${car.mileage}</span>
+                                </div>
+                                <div class="flex items-center gap-2 bg-white/75 border border-slate-200/60 px-3 py-2 rounded-xl">
+                                    <i class="fa-solid fa-gas-pump text-amber-500"></i>
+                                    <span class="truncate">${car.fuel}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Price & CTA -->
+                        <div class="pt-3 border-t border-slate-200/70 flex items-center justify-between gap-3">
+                            <div>
+                                <span class="font-heading font-extrabold text-2xl text-slate-900 block leading-none">${formatUSD(car.priceUSD)}</span>
+                                <span class="text-[11px] font-semibold text-slate-500 mt-1 block">‚âà ${formatUZS(priceUZS)}</span>
+                            </div>
+                            <button onclick="openCarModal(${car.id})" class="px-4 py-3 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs sm:text-sm font-bold transition shadow-md shadow-rose-600/20">
+                                Batafsil / Bron
+                            </button>
+                        </div>
+                    </div>
+                </div>`;
+            }).join('');
+        }
+
+        // ==================== CAR DETAILS MODAL ====================
+        function openCarModal(carId) {
+            const car = carsData.find(c => c.id === carId);
+            if (!car) return;
+
+            const isClean = car.condition === 'Kraska toza';
+            const priceUZS = car.priceUSD * USD_RATE;
+            const modalContent = document.getElementById('car-modal-content');
+            modalContent.innerHTML = `
+                <div class="h-64 sm:h-72 relative">
+                    <img src="${car.image}" onerror="this.src='https://placehold.co/800x500/F1F5F9/0F172A?text=Avtomobil'" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+                </div>
+                <div class="p-6 sm:p-8 -mt-8 relative space-y-6">
+                    <div class="flex flex-wrap items-start justify-between gap-4">
+                        <div>
+                            <span class="px-3 py-1 rounded-full text-xs font-bold ${isClean ? 'bg-emerald-100 text-emerald-700' : 'bg-amber-100 text-amber-700'}">
+                                ${isClean ? '100% Kraska toza' : car.conditionNote}
+                            </span>
+                            <h3 class="font-heading font-extrabold text-2xl sm:text-3xl text-slate-900 mt-2">${car.name}</h3>
+                        </div>
+                        <div class="text-left sm:text-right">
+                            <span class="font-heading font-extrabold text-3xl text-rose-600 block">${formatUSD(car.priceUSD)}</span>
+                            <span class="text-xs font-semibold text-slate-500">‚âà ${formatUZS(priceUZS)}</span>
+                        </div>
+                    </div>
+
+                    <p class="text-slate-600 text-sm leading-relaxed">${car.description}</p>
+
+                    <!-- Technical Grid -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs">
+                        <div class="p-3 rounded-2xl bg-white/80 border border-slate-200/80">
+                            <span class="text-slate-500 block">Yili</span>
+                            <strong class="text-slate-900 text-sm">${car.year}</strong>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-white/80 border border-slate-200/80">
+                            <span class="text-slate-500 block">Probeg</span>
+                            <strong class="text-slate-900 text-sm">${car.mileage}</strong>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-white/80 border border-slate-200/80">
+                            <span class="text-slate-500 block">Uzatmalar qutisi</span>
+                            <strong class="text-slate-900 text-sm">${car.transmission}</strong>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-white/80 border border-slate-200/80">
+                            <span class="text-slate-500 block">Yoqilg'i</span>
+                            <strong class="text-slate-900 text-sm">${car.fuel}</strong>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-white/80 border border-slate-200/80 col-span-2">
+                            <span class="text-slate-500 block">Rangi</span>
+                            <strong class="text-slate-900 text-sm">${car.color}</strong>
+                        </div>
+                    </div>
+
+                    <!-- Direct Call & Telegram Links -->
+                    <div class="grid grid-cols-2 gap-3">
+                        <a href="tel:+998901234567" class="py-3 px-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition shadow-sm">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Qo'ng'iroq qilish</span>
+                        </a>
+                        <a href="https://t.me" target="_blank" class="py-3 px-4 rounded-2xl bg-sky-500 hover:bg-sky-600 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition shadow-sm">
+                            <i class="fa-brands fa-telegram text-base"></i>
+                            <span>Telegramdan yozish</span>
+                        </a>
+                    </div>
+
+                    <!-- Quick Lead Form -->
+                    <form onsubmit="handleCarInquiry(event, '${car.name}')" class="p-5 rounded-2xl bg-slate-50/90 border border-slate-200/80 space-y-3">
+                        <h4 class="font-bold text-slate-900 text-sm">Mashinani bron qilish uchun raqam qoldiring:</h4>
+                        <div class="grid sm:grid-cols-2 gap-3">
+                            <input type="text" required placeholder="Ismingiz" class="px-4 py-3 rounded-xl glass-input text-slate-900 text-sm focus:outline-none">
+                            <input type="tel" required placeholder="+998 90 123-45-67" class="px-4 py-3 rounded-xl glass-input text-slate-900 text-sm focus:outline-none">
+                        </div>
+                        <button type="submit" class="w-full py-3.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-sm transition shadow-md">
+                            So'rov yuborish
+                        </button>
+                    </form>
+                </div>
+            `;
+
+            const modal = document.getElementById('car-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeCarModal() {
+            const modal = document.getElementById('car-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function handleCarInquiry(e, carName) {
+            e.preventDefault();
+            closeCarModal();
+            showToast(`"${carName}" bo'yicha so'rovingiz menejerga yuborildi!`);
+        }
+
+        // ==================== RENDER ACCESSORIES STORE ====================
+        function setAccCategory(cat) {
+            selectedAccCategory = cat;
+            document.querySelectorAll('.acc-tab').forEach(tab => {
+                if (tab.dataset.cat === cat) {
+                    tab.className = 'acc-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-slate-900 text-white shadow-sm transition';
+                } else {
+                    tab.className = 'acc-tab px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold glass-panel text-slate-700 hover:bg-white transition';
+                }
+            });
+            renderAccessories();
+        }
+
+        function renderAccessories() {
+            const grid = document.getElementById('accessories-grid');
+            const filtered = selectedAccCategory === 'Barchasi' 
+                ? accessoriesData 
+                : accessoriesData.filter(item => item.category === selectedAccCategory);
+
+            grid.innerHTML = filtered.map(item => `
+                <div class="group rounded-3xl glass-panel hover:bg-white/85 overflow-hidden flex flex-col justify-between transition-all">
+                    <div>
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="${item.image}" onerror="this.src='https://placehold.co/600x400/F1F5F9/0F172A?text=Aksessuar'" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[11px] font-bold text-slate-800 shadow-sm">
+                                ${item.category}
+                            </span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-heading font-bold text-lg text-slate-900">${item.name}</h3>
+                            <p class="text-xs font-medium text-slate-600 mt-1.5"><i class="fa-solid fa-check text-emerald-600 mr-1"></i> ${item.fit}</p>
+                        </div>
+                    </div>
+
+                    <div class="px-5 pb-5 pt-3 border-t border-slate-200/70 flex items-center justify-between gap-3">
+                        <div>
+                            <span class="text-[11px] font-semibold text-slate-500 block">Narxi:</span>
+                            <span class="font-heading font-extrabold text-lg text-slate-900">${formatUZS(item.price)}</span>
+                        </div>
+                        <button onclick="addToCart(${item.id})" class="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-rose-600 text-white font-bold text-xs sm:text-sm transition flex items-center gap-2 shadow-sm">
+                            <i class="fa-solid fa-cart-plus"></i>
+                            <span>Savatchaga qo'shish</span>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // ==================== SHOPPING CART LOGIC ====================
+        function addToCart(id) {
+            const product = accessoriesData.find(p => p.id === id);
+            if (!product) return;
+
+            const existing = cart.find(item => item.id === id);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ ...product, qty: 1 });
+            }
+
+            updateCartUI();
+            showToast(`"${product.name}" savatchaga qo'shildi!`);
+        }
+
+        function changeCartQty(id, delta) {
+            const item = cart.find(i => i.id === id);
+            if (!item) return;
+
+            item.qty += delta;
+            if (item.qty <= 0) {
+                cart = cart.filter(i => i.id !== id);
+            }
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const badge = document.getElementById('cart-badge');
+            const container = document.getElementById('cart-items-container');
+            const totalEl = document.getElementById('cart-total-uzs');
+            const footer = document.getElementById('cart-footer');
+
+            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+            badge.textContent = totalItems;
+            totalEl.textContent = formatUZS(totalPrice);
+
+            if (cart.length === 0) {
+                footer.classList.add('hidden');
+                container.innerHTML = `
+                    <div class="h-full flex flex-col items-center justify-center text-center py-12">
+                        <div class="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 mb-4">
+                            <i class="fa-solid fa-bag-shopping text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-base">Savatchangiz hozircha bo'sh</h4>
+                        <p class="text-xs text-slate-500 mt-1 max-w-xs">Aksessuarlar bo'limidan mashinangiz uchun kerakli jihozlarni tanlang.</p>
+                    </div>`;
+                return;
+            }
+
+            footer.classList.remove('hidden');
+            container.innerHTML = cart.map(item => `
+                <div class="p-3.5 rounded-2xl bg-white/85 border border-slate-200/80 shadow-sm flex items-center gap-3.5">
+                    <img src="${item.image}" class="w-16 h-16 rounded-xl object-cover shrink-0">
+                    <div class="flex-1 min-w-0">
+                        <h4 class="font-bold text-slate-900 text-sm truncate">${item.name}</h4>
+                        <span class="text-xs text-rose-600 font-bold block mt-0.5">${formatUZS(item.price)}</span>
+                        <div class="flex items-center gap-2 mt-2">
+                            <button onclick="changeCartQty(${item.id}, -1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold">-</button>
+                            <span class="text-xs font-extrabold text-slate-900 px-2">${item.qty}</span>
+                            <button onclick="changeCartQty(${item.id}, 1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold">+</button>
+                        </div>
+                    </div>
+                    <button onclick="changeCartQty(${item.id}, -${item.qty})" class="text-slate-400 hover:text-rose-600 p-2 transition">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function toggleCart(open) {
+            const drawer = document.getElementById('cart-drawer');
+            if (open) {
+                drawer.classList.remove('hidden');
+            } else {
+                drawer.classList.add('hidden');
+            }
+        }
+
+        function submitCartOrder(e) {
+            e.preventDefault();
+            cart = [];
+            updateCartUI();
+            toggleCart(false);
+            e.target.reset();
+            showToast("Buyurtmangiz qabul qilindi! Tez orada operator bog'lanadi.");
+        }
+
+        // ==================== LOAN CALCULATOR LOGIC ====================
+        function setLoanMonths(months) {
+            loanMonths = months;
+            document.querySelectorAll('.month-btn').forEach(btn => {
+                if (parseInt(btn.dataset.months) === months) {
+                    btn.className = 'month-btn active py-3 rounded-2xl bg-rose-600 border border-rose-600 font-bold text-xs sm:text-sm text-white shadow-md shadow-rose-600/20 transition';
+                } else {
+                    btn.className = 'month-btn py-3 rounded-2xl bg-white/80 border border-slate-200 font-bold text-xs sm:text-sm text-slate-700 hover:bg-white transition';
+                }
+            });
+            calculateLoan();
+        }
+
+        function calculateLoan() {
+            const priceUSD = parseInt(document.getElementById('calc-price').value);
+            const downPercent = parseInt(document.getElementById('calc-down').value);
+
+            const downUSD = Math.round(priceUSD * (downPercent / 100));
+            const loanUSD = priceUSD - downUSD;
+            
+            // ~22% annual rate approximation
+            const monthlyRate = 0.22 / 12;
+            const monthlyUSD = Math.round(
+                (loanUSD * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -loanMonths))
+            );
+
+            document.getElementById('calc-price-usd').textContent = formatUSD(priceUSD);
+            document.getElementById('calc-price-uzs').textContent = formatUZS(priceUSD * USD_RATE);
+            document.getElementById('calc-down-percent').textContent = downPercent;
+            document.getElementById('calc-down-usd').textContent = formatUSD(downUSD);
+            document.getElementById('calc-down-uzs').textContent = formatUZS(downUSD * USD_RATE);
+            
+            document.getElementById('calc-monthly-usd').textContent = monthlyUSD.toLocaleString('en-US');
+            document.getElementById('calc-monthly-uzs').textContent = Math.round(monthlyUSD * USD_RATE).toLocaleString('ru-RU');
+            
+            document.getElementById('summary-down').textContent = formatUSD(downUSD);
+            document.getElementById('summary-loan').textContent = formatUSD(loanUSD);
+        }
+
+        // ==================== TRADE-IN FORM ====================
+        function handleTradeInSubmit(e) {
+            e.preventDefault();
+            const model = document.getElementById('ti-model').value;
+            e.target.reset();
+            showToast(`${model} bo'yicha ariza yuborildi! 15 daqiqada baholab qo'ng'iroq qilamiz.`);
+        }
+
+        // ==================== MOBILE MENU & TOAST ====================
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        let toastTimeout;
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').textContent = msg;
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3500);
+        }
+
+        // INITIALIZE ON LOAD
+        window.addEventListener('DOMContentLoaded', () => {
+            renderCars();
+            renderAccessories();
+            calculateLoan();
+            updateCartUI();
+        });
+    </script>
+</body>
+</html>
